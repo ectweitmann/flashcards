@@ -54,13 +54,14 @@ describe('Turn', function() {
     expect(doesMatch).to.equal(false);
   });
 
-  it.skip('should be able to inform a user that their guess is correct', function() {
+  it('should be able to inform a user that their guess is correct', function() {
     const feedback = turn.giveFeedback();
 
     expect(feedback).to.equal('correct!');
   });
 
-  it.skip('should be able to inform a user that their guess is incorrect', function() {
+  it('should be able to inform a user that their guess is incorrect', function() {
+    turn.guess = 'object';
     const feedback = turn.giveFeedback();
 
     expect(feedback).to.equal('incorrect!');
