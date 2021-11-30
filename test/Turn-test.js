@@ -30,7 +30,7 @@ describe('Turn', function() {
     const turn = new Turn('array', card);
 
     expect(turn.currentCard).to.equal(card);
-  })
+  });
 
   it('should be able to return a user\'s guess', function() {
     const card = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
@@ -39,7 +39,7 @@ describe('Turn', function() {
     const guess = turn.getGuess();
 
     expect(guess).to.equal('array');
-  })
+  });
 
   it('should be able to return the current card', function() {
     const card = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
@@ -48,5 +48,5 @@ describe('Turn', function() {
     const currentCard = turn.getCard();
 
     expect(currentCard).to.equal(card);
-  })
+  });
 });
