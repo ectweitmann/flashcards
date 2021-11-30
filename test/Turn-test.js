@@ -10,44 +10,45 @@ describe('Turn', function() {
   let turn = null;
   beforeEach('Create an instance of the Card and Turn class', function() {
     card = new Card(data[1].id, data[1].question, data[1].answers, data[1].correctAnswer);
-    turn = new Turn('array', card);
+    turn = new Turn(data[1].correctAnswer, card);
   });
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     expect(Turn).to.be.a('function');
   });
 
-  it.skip('should be an instance of Turn', function() {
+  it('should be an instance of Turn', function() {
     expect(turn).to.be.an.instanceof(Turn);
   });
 
-  it.skip('should store a user\'s guess', function() {
+  it('should store a user\'s guess', function() {
     expect(turn.guess).to.equal('array');
   });
 
-  it.skip('should store the current card in play', function() {
+  it('should store the current card in play', function() {
     expect(turn.currentCard).to.equal(card);
   });
 
-  it.skip('should be able to return a user\'s guess', function() {
+  it('should be able to return a user\'s guess', function() {
     const guess = turn.returnGuess();
 
     expect(guess).to.equal('array');
   });
 
-  it.skip('should be able to return the current card', function() {
+  it('should be able to return the current card', function() {
     const currentCard = turn.returnCard();
 
     expect(currentCard).to.equal(card);
   });
 
-  it.skip('should be able to evaluate if a user\'s guess matches the correct answer on the card', function() {
+  it('should be able to evaluate if a user\'s guess matches the correct answer on the card', function() {
     const doesMatch = turn.evaluateGuess();
 
     expect(doesMatch).to.equal(true);
   });
 
-  it.skip('should be able to evaluate if a user\'s guess does not match the correct answer on the card', function() {
+  it('should be able to evaluate if a user\'s guess does not match the correct answer on the card', function() {
+    turn.guess = 'object';
     const doesMatch = turn.evaluateGuess();
 
     expect(doesMatch).to.equal(false);
