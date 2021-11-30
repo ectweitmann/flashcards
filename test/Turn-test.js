@@ -67,4 +67,13 @@ describe('Turn', function() {
 
     expect(doesMatch).to.equal(false);
   });
+
+  it('should be able to inform a user that their guess is correct', function() {
+    const card = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+    const turn = new Turn('array', card);
+
+    const feedback = turn.giveFeedback();
+
+    expect(feedback).to.equal('correct!');
+  });
 });
