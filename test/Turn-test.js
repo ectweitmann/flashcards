@@ -9,7 +9,7 @@ describe('Turn', function() {
   let card = null;
   let turn = null;
   beforeEach('Create an instance of the Card and Turn', function() {
-    card = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+    card = new Card(data[1].id, data[1].question, data[1].answers, data[1].correctAnswer);
     turn = new Turn('array', card);
   });
 
