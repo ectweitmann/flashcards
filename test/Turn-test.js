@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const Turn = require('../src/Turn.js');
 const Card = require('../src/Card.js');
+const data = require('../src/data.js').prototypeData;
 
 describe('Turn', function() {
   let card = null;
