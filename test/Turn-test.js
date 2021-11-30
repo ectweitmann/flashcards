@@ -5,6 +5,12 @@ const Turn = require('../src/Turn.js');
 const Card = require('../src/Card.js');
 
 describe('Turn', function() {
+  let card = null;
+  let turn = null;
+  beforeEach('Create an instance of the Card and Turn', function() {
+    card = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+    turn = new Turn('array', card);
+  })
 
   it.skip('should be a function', function() {
     const turn = new Turn();
