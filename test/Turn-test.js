@@ -40,4 +40,13 @@ describe('Turn', function() {
 
     expect(guess).to.equal('array');
   })
+
+  it('should be able to return the current card', function() {
+    const card = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+    const turn = new Turn('array', card);
+
+    const currentCard = turn.getCard();
+
+    expect(currentCard).to.equal(card);
+  })
 });
