@@ -35,4 +35,9 @@ describe('Round', function() {
   it('should begin with no turns having been taken', function() {
     expect(round.turns).to.equal(0);
   });
+
+  it('should begin with the first card in the deck as current card', function() {
+    expect(round.turns).to.equal(0);
+    expect(round.currentCard).to.equal(round.deck[0]);
+  });
 });
