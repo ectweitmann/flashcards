@@ -50,4 +50,12 @@ describe('Round', function() {
 
     expect(currentCard).to.equal(round.currentCard);
   });
+
+  it('should increase the the turn count by 1 after a turn is taken', function() {
+    round.takeTurn();
+    round.takeTurn();
+    round.takeTurn();
+
+    expect(round.turns).to.equal(3);
+  });
 });
