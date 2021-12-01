@@ -58,4 +58,10 @@ describe('Round', function() {
 
     expect(round.turns).to.equal(3);
   });
+
+  it('should move on to the next card in the deck after a turn' function() {
+    round.takeTurn();
+
+    expect(round.currentCard).to.equal(round.deck[1]);
+  })
 });
