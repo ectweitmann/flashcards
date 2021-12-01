@@ -27,4 +27,8 @@ describe('Round', function() {
   it('should be an instance of Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
+
+  it('should store a Deck object', function() {
+    expect(round.deck).to.be.an.instanceof(Deck);
+  });
 });
