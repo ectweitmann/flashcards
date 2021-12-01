@@ -40,4 +40,10 @@ describe('Round', function() {
     expect(round.turns).to.equal(0);
     expect(round.currentCard).to.equal(round.deck[0]);
   });
+
+  it('should be able to return the current card', function() {
+    const currentCard = round.returnCurrentCard();
+
+    expect(currentCard).to.equal(round.currentCard);
+  });
 });
