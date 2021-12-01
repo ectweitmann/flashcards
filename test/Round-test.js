@@ -65,13 +65,13 @@ describe('Round', function() {
   });
 
   it('should give confirmation that a guess is correct', function() {
-    const feedback = round.takeTurn();
+    const feedback = round.takeTurn('iteration method');
 
     expect(feedback).to.equal('correct!');
   });
 
   it('should give confirmation that a guess is incorrect', function() {
-    const feedback = round.takeTurn();
+    const feedback = round.takeTurn('Yahtzee!');
 
     expect(feedback).to.equal('incorrect!');
   });
