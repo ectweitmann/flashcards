@@ -24,4 +24,8 @@ describe('Deck', function() {
   it('should be an instance of Deck', function() {
     expect(deck).to.be.an.instanceof(Deck);
   });
+
+  it('should store an array', function() {
+    expect(deck.cards).to.be.an.instanceof(Array);
+  });
 });
