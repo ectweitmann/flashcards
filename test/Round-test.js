@@ -71,6 +71,12 @@ describe('Round', function() {
     expect(feedback).to.equal('correct!');
   });
 
+  it('should give confirmation that a guess is incorrect', function() {
+    const feedback = round.takeTurn();
+
+    expect(feedback).to.equal('incorrect!');
+  });
+
   it('should move on to the next card in the deck after a turn' function() {
     round.takeTurn();
 
