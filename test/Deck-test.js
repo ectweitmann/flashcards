@@ -10,7 +10,7 @@ describe('Deck', function() {
   const card2 = null;
   const card3 = null;
   const deck = null;
-  beforeEach('Declare an instance of Deck initialzed with an array of Cards'), function() {
+  beforeEach('Declare an instance of Deck initialzed with an array of Cards', function() {
     card1 = new Card(data[1].id, data[1].question, data[1].answers, data[1].correctAnswer);
     card2 = new Card(data[2].id, data[2].question, data[2].answers, data[2].correctAnswer);
     card3 = new Card(data[3].id, data[3].question, data[3].answers, data[3].correctAnswer);
@@ -27,5 +27,11 @@ describe('Deck', function() {
 
   it('should store an array', function() {
     expect(deck.cards).to.be.an.instanceof(Array);
+  });
+
+  it('should only be comprised of Cards', function() {
+    expect(deck.cards[0]).to.be.an.instanceof(Card);
+    expect(deck.cards[1]).to.be.an.instanceof(Card);
+    expect(deck.cards[2]).to.be.an.instanceof(Card);
   });
 });
