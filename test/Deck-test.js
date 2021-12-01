@@ -34,4 +34,10 @@ describe('Deck', function() {
     expect(deck.cards[1]).to.be.an.instanceof(Card);
     expect(deck.cards[2]).to.be.an.instanceof(Card);
   });
+
+  it('should be return the number of cards in the deck', function() {
+    var numberOfCards = deck.countCards();
+
+    expect(numberOfCards).to.equal(deck.cards.length);
+  });
 });
