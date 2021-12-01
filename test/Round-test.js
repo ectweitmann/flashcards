@@ -90,4 +90,14 @@ describe('Round', function() {
 
     expect(percentGuessedCorrectly).to.equal(50);
   });
+
+  it('should notify the end of the round', function() {
+    round.takeTurn('iteration method');
+    round.takeTurn('foo bar');
+
+    const percentGuessedCorrectly = round.calculatePercentCorrect();
+    const closingRemark = round.endRound();
+
+    expect(closingRemark).to.equal(`**Round over!** You answered 50% of the questions correctly!`);
+  });
 });
