@@ -62,7 +62,13 @@ describe('Round', function() {
   it('should record which questions were gotten wrong', function() {
     round.takeTurn();
 
-    expect(round.incorrectGuesses).to.deep.equal([round.currentCard.id])
+    expect(round.incorrectGuesses).to.equal([round.currentCard.id])
+  });
+
+  it('should give confirmation that a guess is correct', function() {
+    const feedback = round.takeTurn();
+
+    expect(feedback).to.equal('correct!');
   });
 
   it('should move on to the next card in the deck after a turn' function() {
