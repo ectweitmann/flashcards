@@ -4,18 +4,18 @@ const expect = chai.expect;
 const Round = require('../src/Round.js');
 const Card = require('../src/Card.js');
 const Deck = require('../src/Deck.js');
-const data = require('../src/data.js').prototypeData;
+const data = require('../src/test-data.js').testData;
 
 describe('Round', function() {
-  let card1 = null;
-  let card2 = null;
-  let card3 = null;
-  let deck = null;
-  let round = null;
+  let card1;
+  let card2;
+  let card3;
+  let deck;
+  let round;
   beforeEach('Declare and initialize instances of Card, Deck, and Round classes', function() {
-    card1 = new Card(data[5].id, data[5].question, data[5].answers, data[5].correctAnswer);
-    card2 = new Card(data[9].id, data[9].question, data[9].answers, data[9].correctAnswer);
-    card3 = new Card(data[12].id, data[12].question, data[12].answers, data[12].correctAnswer);
+    card1 = new Card(data[0].id, data[0].question, data[0].answers, data[0].correctAnswer);
+    card2 = new Card(data[1].id, data[1].question, data[1].answers, data[1].correctAnswer);
+    card3 = new Card(data[2].id, data[2].question, data[2].answers, data[2].correctAnswer);
     deck = new Deck([card1, card2, card3]);
     round = new Round(deck);
   });
@@ -76,7 +76,7 @@ describe('Round', function() {
     expect(feedback).to.equal('incorrect!');
   });
 
-  it('should move on to the next card in the deck after a turn' function() {
+  it('should move on to the next card in the deck after a turn', function() {
     round.takeTurn();
 
     expect(round.currentCard).to.equal(round.deck[1]);

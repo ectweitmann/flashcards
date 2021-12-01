@@ -3,17 +3,17 @@ const expect = chai.expect;
 
 const Deck = require('../src/Deck.js');
 const Card = require('../src/Card.js');
-const data = require('../src/data.js').prototypeData;
+const data = require('../src/test-data.js').testData;
 
 describe('Deck', function() {
-  let card1 = null;
-  let card2 = null;
-  let card3 = null;
-  let deck = null;
+  let card1;
+  let card2;
+  let card3;
+  let deck;
   beforeEach('Declare an instance of Deck initialzed with an array of Cards', function() {
-    card1 = new Card(data[1].id, data[1].question, data[1].answers, data[1].correctAnswer);
-    card2 = new Card(data[2].id, data[2].question, data[2].answers, data[2].correctAnswer);
-    card3 = new Card(data[3].id, data[3].question, data[3].answers, data[3].correctAnswer);
+    card1 = new Card(data[0].id, data[0].question, data[0].answers, data[0].correctAnswer);
+    card2 = new Card(data[1].id, data[1].question, data[1].answers, data[1].correctAnswer);
+    card3 = new Card(data[2].id, data[2].question, data[2].answers, data[2].correctAnswer);
     deck = new Deck([card1, card2, card3]);
   });
 
