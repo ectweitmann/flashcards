@@ -3,11 +3,11 @@ const expect = chai.expect;
 
 const Turn = require('../src/Turn.js');
 const Card = require('../src/Card.js');
-const data = require('../src/data.js').prototypeData;
+const data = require('../src/test-data.js').testData;
 
 describe('Turn', function() {
-  let card = null;
-  let turn = null;
+  let card;
+  let turn;
   beforeEach('Create an instance of the Card and Turn class', function() {
     card = new Card(data[1].id, data[1].question, data[1].answers, data[1].correctAnswer);
     turn = new Turn(data[1].correctAnswer, card);
