@@ -76,7 +76,7 @@ describe('Round', function() {
     expect(feedback).to.equal('incorrect!');
   });
 
-  it('should move on to the next card in the deck after a turn' function() {
+  it('should move on to the next card in the deck after a turn', function() {
     round.takeTurn();
 
     expect(round.currentCard).to.equal(round.deck[1]);
