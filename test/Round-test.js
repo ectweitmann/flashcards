@@ -31,4 +31,8 @@ describe('Round', function() {
   it('should store a Deck object', function() {
     expect(round.deck).to.be.an.instanceof(Deck);
   });
+
+  it('should begin with no turns having been taken', function() {
+    expect(round.turns).to.equal(0);
+  });
 });
