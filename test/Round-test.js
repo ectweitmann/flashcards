@@ -54,9 +54,8 @@ describe('Round', function() {
   it('should increase the the turn count by 1 after a turn is taken', function() {
     round.takeTurn();
     round.takeTurn();
-    round.takeTurn();
 
-    expect(round.turns).to.equal(3);
+    expect(round.turns).to.equal(2);
   });
 
   it('should record which questions were gotten wrong', function() {
