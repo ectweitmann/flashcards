@@ -35,7 +35,7 @@ describe('Deck', function() {
     expect(deck.cards[2]).to.be.an.instanceof(Card);
   });
 
-  it('should be return the number of cards in the deck', function() {
+  it('should be able to return the number of cards in the deck', function() {
     let numberOfCards = deck.countCards();
 
     expect(numberOfCards).to.equal(deck.cards.length);
