@@ -59,9 +59,15 @@ describe('Round', function() {
     expect(round.turns).to.equal(3);
   });
 
+  it('should record which questions were gotten wrong', function() {
+    round.takeTurn();
+
+    expect(round.incorrectGuesses).to.deep.equal([round.currentCard.id])
+  });
+
   it('should move on to the next card in the deck after a turn' function() {
     round.takeTurn();
 
     expect(round.currentCard).to.equal(round.deck[1]);
-  })
+  });
 });
