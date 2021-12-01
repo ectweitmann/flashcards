@@ -19,4 +19,8 @@ describe('Round', function() {
     deck = new Deck([card1, card2, card3]);
     round = new Round(deck);
   });
+
+  it('should be a function', function() {
+    expect(Round).to.be.a('function');
+  });
 });
