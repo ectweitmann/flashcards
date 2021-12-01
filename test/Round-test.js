@@ -81,4 +81,13 @@ describe('Round', function() {
 
     expect(round.currentCard).to.equal(round.deck[1]);
   });
+
+  it('should be able to calculate and return the percentage of correct guesses', function() {
+    round.takeTurn('iteration method');
+    round.takeTurn('foo bar');
+
+    const percentGuessedCorrectly = round.calculatePercentCorrect();
+
+    expect(percentGuessedCorrectly).to.equal(50);
+  });
 });
