@@ -58,10 +58,10 @@ describe('Round', function() {
     expect(round.turns).to.equal(2);
   });
 
-  it('should record which questions were gotten wrong', function() {
-    round.takeTurn();
+  it.only('should record which questions were gotten wrong', function() {
+    round.takeTurn('Bar Foo');
 
-    expect(round.incorrectGuesses).to.equal([round.currentCard.id])
+    expect(round.incorrectGuesses).to.deep.equal([round.currentCard.id])
   });
 
   it('should give confirmation that a guess is correct', function() {
