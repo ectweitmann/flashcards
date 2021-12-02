@@ -29,7 +29,7 @@ describe('Round', function() {
   });
 
   it('should store a deck of cards', function() {
-    expect(round.deck).to.deep.equal(deck.cards);
+    expect(round.deck).to.deep.equal([card1, card2, card3]);
   });
 
   it('should begin with no turns having been taken', function() {
@@ -42,13 +42,13 @@ describe('Round', function() {
 
   it('should begin with the first card in the deck as current card', function() {
     expect(round.turns).to.equal(0);
-    expect(round.currentCard).to.equal(round.deck[0]);
+    expect(round.currentCard).to.equal(card1);
   });
 
   it('should be able to return the current card', function() {
     const currentCard = round.returnCurrentCard();
 
-    expect(currentCard).to.equal(round.currentCard);
+    expect(currentCard).to.equal(card1);
   });
 
   it('should increase the the turn count by 1 after a turn is taken', function() {
