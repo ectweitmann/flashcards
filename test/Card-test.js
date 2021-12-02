@@ -6,7 +6,7 @@ const data = require('../src/test-data.js').testData;
 
 describe('Card', function() {
   let card;
-  beforeEach('Create an instance of the Card and Turn class', function() {
+  beforeEach('Create an instance of the Card class', function() {
     card = new Card(data[0].id, data[0].question, data[0].answers, data[0].correctAnswer);
   });
   it('should be a function', function() {
