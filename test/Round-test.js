@@ -28,8 +28,8 @@ describe('Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it('should store a Deck object', function() {
-    expect(round.deck).to.be.an.instanceof(Deck);
+  it('should store a deck of cards', function() {
+    expect(round.deck).to.deep.equal([card1, card2, card3]);
   });
 
   it('should begin with no turns having been taken', function() {
@@ -37,18 +37,18 @@ describe('Round', function() {
   });
 
   it('should begin with no incorrect guesses', function() {
-    expect(round.incorrectGuesses).to.equal([]);
+    expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
   it('should begin with the first card in the deck as current card', function() {
     expect(round.turns).to.equal(0);
-    expect(round.currentCard).to.equal(round.deck[0]);
+    expect(round.currentCard).to.equal(card1);
   });
 
   it('should be able to return the current card', function() {
     const currentCard = round.returnCurrentCard();
 
-    expect(currentCard).to.equal(round.currentCard);
+    expect(currentCard).to.equal(card1);
   });
 
   it('should increase the the turn count by 1 after a turn is taken', function() {
@@ -59,13 +59,13 @@ describe('Round', function() {
   });
 
   it('should record which questions were gotten wrong', function() {
-    round.takeTurn();
+    round.takeTurn('Bar Foo');
 
-    expect(round.incorrectGuesses).to.equal([round.currentCard.id])
+    expect(round.incorrectGuesses).to.deep.equal([1])
   });
 
   it('should give confirmation that a guess is correct', function() {
-    const feedback = round.takeTurn('iteration method');
+    const feedback = round.takeTurn('object');
 
     expect(feedback).to.equal('correct!');
   });
@@ -79,11 +79,11 @@ describe('Round', function() {
   it('should move on to the next card in the deck after a turn', function() {
     round.takeTurn();
 
-    expect(round.currentCard).to.equal(round.deck[1]);
+    expect(round.currentCard).to.equal(card2);
   });
 
   it('should be able to calculate and return the percentage of correct guesses', function() {
-    round.takeTurn('iteration method');
+    round.takeTurn('object');
     round.takeTurn('foo bar');
 
     const percentGuessedCorrectly = round.calculatePercentCorrect();
@@ -92,10 +92,9 @@ describe('Round', function() {
   });
 
   it('should notify the end of the round', function() {
-    round.takeTurn('iteration method');
+    round.takeTurn('object');
     round.takeTurn('foo bar');
 
-    const percentGuessedCorrectly = round.calculatePercentCorrect();
     const closingRemark = round.endRound();
 
     expect(closingRemark).to.equal(`**Round over!** You answered 50% of the questions correctly!`);
