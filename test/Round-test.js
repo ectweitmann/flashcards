@@ -61,11 +61,11 @@ describe('Round', function() {
   it('should record which questions were gotten wrong', function() {
     round.takeTurn('Bar Foo');
 
-    expect(round.incorrectGuesses).to.deep.equal([round.currentCard.id])
+    expect(round.incorrectGuesses).to.deep.equal([1])
   });
 
   it('should give confirmation that a guess is correct', function() {
-    const feedback = round.takeTurn('iteration method');
+    const feedback = round.takeTurn('object');
 
     expect(feedback).to.equal('correct!');
   });
@@ -79,7 +79,7 @@ describe('Round', function() {
   it('should move on to the next card in the deck after a turn', function() {
     round.takeTurn();
 
-    expect(round.currentCard).to.equal(round.deck[1]);
+    expect(round.currentCard).to.equal(card2);
   });
 
   it('should be able to calculate and return the percentage of correct guesses', function() {
