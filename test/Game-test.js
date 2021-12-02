@@ -6,7 +6,7 @@ const Round = require('../src/Round.js');
 const Deck = require('../src/Deck.js');
 const Turn = require('../src/Turn.js');
 const Card = require('../src/Card.js');
-const data = require('../src/test-date.js').testData;
+const data = require('../src/test-data.js').testData;
 
 describe('Game', function () {
   let game;
@@ -21,5 +21,9 @@ describe('Game', function () {
     deck = new Deck([card1, card2, card3]);
     round = new Round(deck);
     game = new Game(round);
+  });
+
+  it('should keep track of the current round', function() {
+    expect(game.currentRound).to.deep.equal(round);
   });
 });
