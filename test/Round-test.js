@@ -37,7 +37,7 @@ describe('Round', function() {
   });
 
   it('should begin with no incorrect guesses', function() {
-    expect(round.incorrectGuesses).to.equal([]);
+    expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
   it('should begin with the first card in the deck as current card', function() {
