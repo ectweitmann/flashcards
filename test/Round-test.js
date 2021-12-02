@@ -28,8 +28,8 @@ describe('Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it('should store a Deck object', function() {
-    expect(round.deck).to.be.an.instanceof(Deck);
+  it('should store a deck of cards', function() {
+    expect(round.deck).to.deep.equal(deck.cards);
   });
 
   it('should begin with no turns having been taken', function() {
@@ -58,7 +58,7 @@ describe('Round', function() {
     expect(round.turns).to.equal(2);
   });
 
-  it.only('should record which questions were gotten wrong', function() {
+  it('should record which questions were gotten wrong', function() {
     round.takeTurn('Bar Foo');
 
     expect(round.incorrectGuesses).to.deep.equal([round.currentCard.id])
