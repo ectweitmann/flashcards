@@ -9,32 +9,41 @@ const data = require('../src/test-data.js').testData;
 
 describe('Game', function () {
   let game;
-  before('Declare and initiliaze Game instance', function() {
+
+  beforeEach('Declare and initiliaze Game instance', function() {
     game = new Game();
   });
 
-  afterEach('Invoke start() method', function() {
-    game.start();
-  })
+  describe('Initial State', function() {
 
-  it('should keep track of the current round', function() {
-    expect(game.currentRound).to.equal(null);
+    it('should initiliaze correctly', function() {
+      expect(game.currentRound).to.equal(null);
+      expect(game.deck).to.equal(null);
+    });
   });
 
-  it('should create cards', function() {
-    expect(game).to.have.property('cards');
-    expect(game.cards).to.have.lengthOf(30);
-    expect(game.cards[0]).to.be.an.instanceof(Card);
-  });
+  describe('start method', function() {
 
-  it('should put cards in a deck', function() {
-    expect(game).to.have.property('deck');
-    expect(game.deck).to.be.an.instanceof(Deck);
-    expect(game.deck.cards).to.deep.equal(game.cards);
-  });
+    beforeEach('Invoke start() method', function() {
+      game.start();
+    });
 
-  it('should create a new Round using the deck', function() {
-    expect(game.currentRound).to.be.an.instanceof(Round);
-    expect(game.currentRound.deck).to.deep.equal(game.deck.cards);
+    it('should create cards', function() {
+      expect(game.deck.cards).to.have.lengthOf(30);
+      expect(game.deck.cards[0]).to.be.an.instanceof(Card);
+    });
+
+    it('should put cards in a deck', function() {
+      expect(game.deck).to.be.an.instanceof(Deck);
+    });
+
+    it('should create a new Round using the deck', function() {
+      expect(game.currentRound.deck).to.deep.equal(game.deck.cards);
+    });
+
+    it('should keep track of the current round', function() {
+      expect(game.currentRound).to.be.an.instanceof(Round);
+      expect(game.currentRound.turns).to.deep.equal(0);
+    });
   });
 });
