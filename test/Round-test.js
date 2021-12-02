@@ -83,7 +83,7 @@ describe('Round', function() {
   });
 
   it('should be able to calculate and return the percentage of correct guesses', function() {
-    round.takeTurn('iteration method');
+    round.takeTurn('object');
     round.takeTurn('foo bar');
 
     const percentGuessedCorrectly = round.calculatePercentCorrect();
@@ -92,10 +92,9 @@ describe('Round', function() {
   });
 
   it('should notify the end of the round', function() {
-    round.takeTurn('iteration method');
+    round.takeTurn('object');
     round.takeTurn('foo bar');
 
-    const percentGuessedCorrectly = round.calculatePercentCorrect();
     const closingRemark = round.endRound();
 
     expect(closingRemark).to.equal(`**Round over!** You answered 50% of the questions correctly!`);
