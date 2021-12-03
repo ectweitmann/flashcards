@@ -10,10 +10,9 @@ This program allows a user to play a flashcard game via the command line. A user
 - Mocha / Chai
 
 ## Setup
-
 1. Clone down the repo via
 ```bash
-git clone [remote-address] [what you want to name the repo]
+git clone [remote-address]
 ```
 2. Once you have cloned the repo, change into the directory and install the library dependencies. Run:
 ```bash
